@@ -1,0 +1,36 @@
+{
+  "name": "hi-app",
+  "version": "1.0.0",
+  "description": "A simple app that says Hi",
+  "author": "App Creator",
+  "main": "main.js",
+  "scripts": {
+    "build:win": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.example.hiapp",
+    "productName": "Hi App",
+    "files": [
+      "main.js",
+      "index.html"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "artifactName": "Hi-App-Setup.exe"
+    }
+  }
+}
